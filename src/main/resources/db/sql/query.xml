@@ -1,0 +1,57 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet context="legacy" author="author (generated)" id="1">
+        <createTable tableName="testTable">
+            <column autoIncrement="true" name="id" type="SERIAL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_name22" type="VARCHAR(255)"/>
+            <column name="preferences" type="TEXT"/>
+        </createTable>
+
+        <rollback>
+            <dropTable tableName="testTable" />
+        </rollback>
+    </changeSet>
+
+    <changeSet context="legacy" author="author (generated)" id="2">
+        <createTable tableName="testTable2" schemaName="artquiz">
+            <column autoIncrement="true" name="id" type="SERIAL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_name22" type="VARCHAR(255)"/>
+            <column name="preferences" type="TEXT"/>
+        </createTable>
+
+        <rollback>
+            <dropTable tableName="testTable2" />
+        </rollback>
+    </changeSet>
+
+    <changeSet author="author (generated)" id="33">
+        <createTable tableName="testTable3" schemaName="artquiz">
+            <column autoIncrement="true" name="id" type="SERIAL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_name22" type="VARCHAR(255)"/>
+            <column name="preferences" type="TEXT"/>
+        </createTable>
+
+        <rollback>
+            <dropTable tableName="testTable2" />
+        </rollback>
+    </changeSet>
+
+    <changeSet author="author5" id="1000">
+        <sql>CREATE TABLE artquiz.test7();</sql>
+        <rollback>DROP TABLE artquiz.test7 CASCADE;</rollback>
+    </changeSet>
+
+    <changeSet author="author2000" id="2000" >
+        <sql>CREATE TABLE artquiz.test8(id SERIAL NOT NULL);</sql>
+        <rollback>DROP TABLE artquiz.test8 CASCADE;</rollback>
+    </changeSet>
+</databaseChangeLog>
