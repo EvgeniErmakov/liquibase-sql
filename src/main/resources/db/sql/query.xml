@@ -54,4 +54,24 @@
         <sql>CREATE TABLE artquiz.test8(id SERIAL NOT NULL);</sql>
         <rollback>DROP TABLE artquiz.test8 CASCADE;</rollback>
     </changeSet>
+
+    <changeSet author="author2000" id="2001" >
+        <sql>INSERT INTO artquiz.test3000 VALUES(6)</sql>
+        <rollback>DROP TABLE artquiz.test8 CASCADE;</rollback>
+    </changeSet>
+
+    <changeSet author="author2000" id="2002" >
+        <tagDatabase tag="2002.0"/>
+    </changeSet>
+
+    <changeSet author="author2000" id="2003" >
+        <sql>INSERT INTO artquiz.test3000 VALUES(3)</sql>
+        <rollback>DROP TABLE artquiz.test8 CASCADE;</rollback>
+    </changeSet>
+
+    <changeSet author="author2000" id="2004" created="2022-01-01">
+        <sql>INSERT INTO artquiz.test3000 VALUES(4)</sql>
+        <rollback>DROP TABLE artquiz.test8 CASCADE;</rollback>
+    </changeSet>
+
 </databaseChangeLog>
