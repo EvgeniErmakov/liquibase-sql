@@ -34,3 +34,7 @@ INSERT INTO artquiz.ermakov4 VALUES(1,'123');
 --changeset ermakov:5
 INSERT INTO artquiz.ermakov4 VALUES(2,'123');
 --rollback TRUNCATE TABLE artquiz.ermakov4;
+
+--changeset ermakov:6 tag:tager
+INSERT INTO artquiz.ermakov4 VALUES(3,'667');
+--rollback DELETE FROM artquiz.ermakov4 WHERE id4=3;
