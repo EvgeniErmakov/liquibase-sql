@@ -38,3 +38,14 @@ INSERT INTO artquiz.ermakov4 VALUES(2,'123');
 --changeset ermakov:6 tag:tager
 INSERT INTO artquiz.ermakov4 VALUES(3,'667');
 --rollback DELETE FROM artquiz.ermakov4 WHERE id4=3;
+
+--changeset ermakov:7
+--precondition-sql-check expectedResult:0 SELECT COUNT(*) FROM artquiz.ermakov4
+INSERT INTO artquiz.ermakov4 VALUES(4,'777');
+--rollback DELETE FROM artquiz.ermakov4 WHERE id4=4;
+
+--changeset ermakov:8
+--preconditions onFail:MARK_RAN
+--precondition-sql-check expectedResult:0 SELECT COUNT(*) FROM artquiz.ermakov4
+INSERT INTO artquiz.ermakov4 VALUES(8,'888');
+--rollback DELETE FROM artquiz.ermakov4 WHERE id4=8;
